@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
     void setCurrentState(EnemyStates state)
     {
         currentState = state;
-        LastStateChange = Time.time;
     }
 
     [Header("Health")]
@@ -39,7 +38,6 @@ public class Enemy : MonoBehaviour
     private bool attacked = false;
     private bool decision = false;
     private EnemyStates currentState;
-    private float LastStateChange = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
