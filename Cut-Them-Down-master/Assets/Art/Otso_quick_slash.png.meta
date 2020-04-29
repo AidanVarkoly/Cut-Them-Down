@@ -1,0 +1,373 @@
+fileFormatVersion: 2
+guid: 666ac2f48e0bf194dbf4d5554e77bfd9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5074670584188478464
+    second: Otso_quick_slash_0
+  - first:
+      213: -3541413684422173947
+    second: Otso_quick_slash_1
+  - first:
+      213: 3666399990187244078
+    second: Otso_quick_slash_2
+  - first:
+      213: 7825514200954039909
+    second: Otso_quick_slash_3
+  - first:
+      213: -1398624057476971549
+    second: Otso_quick_slash_4
+  - first:
+      213: -4617858398521789073
+    second: Otso_quick_slash_5
+  - first:
+      213: 4141989998726009818
+    second: Otso_quick_slash_6
+  - first:
+      213: -6363764566315275174
+    second: Otso_quick_slash_7
+  - first:
+      213: -1994915039566146294
+    second: Otso_quick_slash_8
+  - first:
+      213: -1058474864660828604
+    second: Otso_quick_slash_9
+  - first:
+      213: -1017689290574624240
+    second: Otso_quick_slash_10
+  - first:
+      213: -7218430229157133332
+    second: Otso_quick_slash_0
+  - first:
+      213: 1101980822518635779
+    second: Otso_quick_slash_1
+  - first:
+      213: -8073891448019283000
+    second: Otso_quick_slash_2
+  - first:
+      213: 5294881724999628119
+    second: Otso_quick_slash_3
+  - first:
+      213: -438945765276399803
+    second: Otso_quick_slash_4
+  - first:
+      213: -7004141805574028716
+    second: Otso_quick_slash_5
+  - first:
+      213: 1728050718213222515
+    second: Otso_quick_slash_6
+  - first:
+      213: 8267117090376276144
+    second: Otso_quick_slash_7
+  - first:
+      213: 6364109562102048574
+    second: Otso_quick_slash_8
+  - first:
+      213: 8666256592816090213
+    second: Otso_quick_slash_9
+  - first:
+      213: -7251277322258989818
+    second: Otso_quick_slash_10
+  - first:
+      213: 3756801261484629221
+    second: Otso_quick_slash_11
+  - first:
+      213: 8461117649947187188
+    second: Otso_quick_slash_12
+  - first:
+      213: 238428832778114922
+    second: Otso_quick_slash_13
+  - first:
+      213: -3293946878795896511
+    second: Otso_quick_slash_14
+  - first:
+      213: 7927750303775407166
+    second: Otso_quick_slash_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 15
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Otso_quick_slash_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 129
+        width: 47
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3c52393fbf2db90800000000000000
+      internalID: -7218430229157133332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otso_quick_slash_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 129
+        width: 47
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30d148338b50b4f00800000000000000
+      internalID: 1101980822518635779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otso_quick_slash_2
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 129
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c31fbd5186c3ff80800000000000000
+      internalID: -8073891448019283000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otso_quick_slash_3
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 69
+        width: 52
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7557f4a10e23b7940800000000000000
+      internalID: 5294881724999628119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otso_quick_slash_4
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 66
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547c901f62d88e9f0800000000000000
+      internalID: -438945765276399803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otso_quick_slash_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 68
+        width: 52
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4520c4a232a4cce90800000000000000
+      internalID: -7004141805574028716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otso_quick_slash_6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 8
+        width: 52
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37035fcf8f44bf710800000000000000
+      internalID: 1728050718213222515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otso_quick_slash_7
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 9
+        width: 50
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b850705133bab270800000000000000
+      internalID: 8267117090376276144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otso_quick_slash_8
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 9
+        width: 47
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3762c0adebd15850800000000000000
+      internalID: 6364109562102048574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
