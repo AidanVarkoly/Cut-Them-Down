@@ -62,17 +62,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CTD_Package1.2\Attack-new.cs" />
+    <Compile Include="Assets\CTD_Package1.2\AudioController-new.cs" />
+    <Compile Include="Assets\CTD_Package1.2\Hunter-new.cs" />
+    <Compile Include="Assets\CTD_Package1.2\Lumberjack-new.cs" />
+    <Compile Include="Assets\CTD_Package1.2\PlayerMovement-new.cs" />
+    <Compile Include="Assets\CTD_Package1.2\Tree-new.cs" />
     <Compile Include="Assets\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Attack.cs" />
-    <Compile Include="Assets\Scripts\AudioController.cs" />
-    <Compile Include="Assets\Scripts\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Hunter.cs" />
-    <Compile Include="Assets\Scripts\Lumberjack.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\SettingsMenu.cs" />
-    <Compile Include="Assets\Scripts\Sound.cs" />
-    <Compile Include="Assets\Scripts\Tree.cs" />
     <Compile Include="Assets\TextMesh Pro\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
