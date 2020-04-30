@@ -8,6 +8,7 @@ TagManager:
   - Bar
   - Enemy
   - SpawnPoint
+  - Arrow
   layers:
   - Default
   - TransparentFX

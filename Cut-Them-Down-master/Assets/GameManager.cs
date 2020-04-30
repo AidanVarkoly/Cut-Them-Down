@@ -42,10 +42,12 @@ public class GameManager : MonoBehaviour
     public float SpawnTime = 0;
     public float MaxSpawnTime = 5;
     public int EnemiesAlive = 0;
+    public int WaveCounter = 0;
     public bool Wave1Finished = false;
     public bool Wave2Finished = false;
 
     [Header("Text")]
+    public Text WaveNumber;
     public Text InBetweenRoundTime;
     public Text EndGame;
 
@@ -63,6 +65,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        WaveNumber.text = WaveCounter.ToString("");
 
         switch (currentState)
         {
@@ -72,10 +75,11 @@ public class GameManager : MonoBehaviour
                 InBetweenRoundTime.gameObject.SetActive(true);
                 InBetweenRoundTime.text = GracePeriod.ToString("0") + " / " + MaxGracePeriod;
 
-                if(GracePeriod <= 0)
+                if (GracePeriod <= 0)
                 {
                     InBetweenRoundTime.gameObject.SetActive(false);
                     setCurrentState(SpawnStates.Wave1);
+                    WaveCounter++;
                 }
 
                 if(Wave1Finished && GracePeriod <= 0)
@@ -103,6 +107,7 @@ public class GameManager : MonoBehaviour
 
                 if (EnemiesAlive == 0)
                 {
+                    WaveCounter++;
                     Wave1Finished = true;
                     GracePeriod = 30;
                     setCurrentState(SpawnStates.Idle);
@@ -138,6 +143,7 @@ public class GameManager : MonoBehaviour
 
                 if (EnemiesAlive == 0)
                 {
+                    WaveCounter++;
                     Wave2Finished = true;
                     GracePeriod = 30;
                     setCurrentState(SpawnStates.Idle);
@@ -146,10 +152,8 @@ public class GameManager : MonoBehaviour
                 break;
             case SpawnStates.Wave3:
 
-
                 break;
             case SpawnStates.Wave4:
-
 
                 break;
             case SpawnStates.EndGame:
