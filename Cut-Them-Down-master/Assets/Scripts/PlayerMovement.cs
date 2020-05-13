@@ -35,8 +35,6 @@ public class PlayerMovement : MonoBehaviour
     public float MaxStamina = 50;
     public Slider StaminaBar;
     public Text StaminaCount;
-
-
     Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -44,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         Stamina = MaxStamina;
-        allMyOtsoSources = this.GetComponentsInChildren<AudioSource>();
         otsoWalkSource = allMyOtsoSources[0];
         otsoRunSource = allMyOtsoSources[1];
         roarRun1Source = allMyOtsoSources[2];
@@ -107,6 +104,18 @@ public class PlayerMovement : MonoBehaviour
         }
 
         StaminaBar.value = Stamina;
+        if(Stamina <= 30)
+        {
+            StaminaBar.fillRect.GetComponent<Image>().color = Color.yellow;
+        }
+        if (Stamina <= 15)
+        {
+            StaminaBar.fillRect.GetComponent<Image>().color = Color.red;
+        }
+        if(Stamina <= 0)
+        {
+            StaminaBar.fillRect.GetComponent<Image>().color = Color.clear;
+        }
         StaminaCount.text = Stamina.ToString("0") + " / " + MaxStamina; 
     }
 

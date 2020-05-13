@@ -63,7 +63,7 @@ public class Arrow : MonoBehaviour
             {
                 collision.collider.gameObject.GetComponent<PlayerMovement>().TakeDamage(damage);
                 dealtDamage = true;
-            }            
+            }
             Proj.transform.parent = Otso.transform;
             Destroy(rb);
         }
@@ -77,7 +77,7 @@ public class Arrow : MonoBehaviour
 
     IEnumerator Despawn()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         Destroy(this.gameObject);
     }
 }

@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
         Wave2,
         Wave3,
         Wave4,
-        EndGame
+        EndGame,
+        Dead
     }
 
     void setCurrentState(SpawnStates state)
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     [Header("Prefabs")]
     public GameObject hunter;
     public GameObject lumberjack;
+    public PlayerMovement Otso;
 
     [Header("SpawnPoints")]
     public Transform[] SpawnPoints;
@@ -35,7 +37,7 @@ public class GameManager : MonoBehaviour
     public int RandomEnemy;
     public SpawnStates currentState;
     private Scene Level1;
-    public float MaxGracePeriod = 30;
+    public float MaxGracePeriod = 10;
     private float GracePeriod;
     public int EnemiesInWaves;
     private int MaxEnemiesInWaves = 10;
@@ -48,7 +50,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Text")]
     public Text WaveNumber;
+    public Text EnemyNumber;
     public Text InBetweenRoundTime;
+    public Text Dead;
     public Text EndGame;
 
     
@@ -66,6 +70,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         WaveNumber.text = WaveCounter.ToString("");
+        EnemyNumber.text = EnemiesAlive.ToString("");
+
+        if(Otso.Stamina <= 0)
+        {
+            setCurrentState(SpawnStates.Dead);
+        }
 
         switch (currentState)
         {
@@ -79,23 +89,28 @@ public class GameManager : MonoBehaviour
                 {
                     InBetweenRoundTime.gameObject.SetActive(false);
                     setCurrentState(SpawnStates.Wave1);
+                }
+                if (!Wave1Finished && GracePeriod <= 0)
+                {
                     WaveCounter++;
                 }
 
-                if(Wave1Finished && GracePeriod <= 0)
+                if (Wave1Finished && GracePeriod <= 0)
                 {
                     setCurrentState(SpawnStates.Wave2);
+                    WaveCounter++;
                 }
                 if (Wave2Finished && GracePeriod <= 0)
                 {
                     setCurrentState(SpawnStates.Wave3);
+                    WaveCounter++;
                 }
                 break;
             case SpawnStates.Wave1:
 
                 SpawnTime -= Time.deltaTime;
 
-                if(EnemiesInWaves < MaxEnemiesInWaves)
+                if (EnemiesInWaves < MaxEnemiesInWaves)
                 {
                     if(SpawnTime <= 0)
                     {
@@ -107,9 +122,8 @@ public class GameManager : MonoBehaviour
 
                 if (EnemiesAlive == 0)
                 {
-                    WaveCounter++;
                     Wave1Finished = true;
-                    GracePeriod = 30;
+                    GracePeriod = 10;
                     setCurrentState(SpawnStates.Idle);
                 }
 
@@ -143,14 +157,15 @@ public class GameManager : MonoBehaviour
 
                 if (EnemiesAlive == 0)
                 {
-                    WaveCounter++;
                     Wave2Finished = true;
-                    GracePeriod = 30;
+                    GracePeriod = 10;
                     setCurrentState(SpawnStates.Idle);
                 }
 
                 break;
             case SpawnStates.Wave3:
+
+                setCurrentState(SpawnStates.EndGame);
 
                 break;
             case SpawnStates.Wave4:
@@ -160,6 +175,10 @@ public class GameManager : MonoBehaviour
                 EndGame.gameObject.SetActive(true);
                 StartCoroutine("RestartLevel");
 
+                break;
+            case SpawnStates.Dead:
+                Dead.gameObject.SetActive(true);
+                StartCoroutine("RestartLevel");
                 break;
         }
     }

@@ -88,7 +88,7 @@ public class Hunter : MonoBehaviour
             huntAttackSource.Play();
             animator.SetTrigger("Attack");
             Fire();
-        }        
+        }
         yield return new WaitForSeconds(1.9f);
     }
 
@@ -118,7 +118,11 @@ public class Hunter : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, Otso.transform.position, Speed * 2 * Time.deltaTime);
         }
-        else
+        if(Dist2 < 3)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, Otso.transform.position, -Speed * 2 * Time.deltaTime);
+        }
+        if(Dist2 > 3 && Dist2 < 6)
         {
             StartCoroutine(Attack());
         }

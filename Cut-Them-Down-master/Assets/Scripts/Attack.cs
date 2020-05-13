@@ -39,7 +39,6 @@ public class Attack : MonoBehaviour
 
     void Start()
     {
-        allMyOtsoSources = this.GetComponentsInChildren<AudioSource>();
         otsoWalkSource = allMyOtsoSources[0];
         otsoRunSource = allMyOtsoSources[1];
         roarRun1Source = allMyOtsoSources[2];
