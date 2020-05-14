@@ -12,7 +12,6 @@ public class Tree : MonoBehaviour
     public float currentHealth;
     public Slider treeHealth;
     public GameManager gameManager;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +46,6 @@ public class Tree : MonoBehaviour
     {
         treeFallSource.Play();
         gameManager.GetComponent<GameManager>().TreesDestroyed++;
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }

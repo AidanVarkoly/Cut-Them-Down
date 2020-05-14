@@ -563,6 +563,8 @@ MonoBehaviour:
   currentHealth: 0
   treeHealth: {fileID: 2477064346949089202}
   gameManager: {fileID: 0}
+  spriteRenderer: {fileID: 5150653569185790156}
+  stump: {fileID: -8862983002848217087, guid: 22154343074261441b6b3079b8eb3f8d, type: 3}
 --- !u!70 &2337593097039304664
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -824,7 +826,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -489007065
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e50a90520f26f18408e9e6e971e27dfe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

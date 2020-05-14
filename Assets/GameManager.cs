@@ -32,7 +32,9 @@ public class GameManager : MonoBehaviour
 
     [Header("SpawnPoints")]
     public Transform[] SpawnPoints;
+    public Transform[] SpawnPointsWave2;
     int RandomSpawn;
+    public Transform Spawn2;
 
     [Header("Waves")]
     public int RandomEnemy;
@@ -104,6 +106,7 @@ public class GameManager : MonoBehaviour
                 if (Wave1Finished && GracePeriod <= 0)
                 {
                     setCurrentState(SpawnStates.Wave2);
+                    TeleportWave2();
                     WaveCounter++;
                 }
                 if (Wave2Finished && GracePeriod <= 0)
@@ -155,7 +158,7 @@ public class GameManager : MonoBehaviour
                 {
                     if (SpawnTime <= 0)
                     {
-                        SpawnEnemies();
+                        SpawnEnemiesWave2();
                         SpawnTime = MaxSpawnTime;
                     }
 
@@ -208,4 +211,19 @@ public class GameManager : MonoBehaviour
         EnemiesInWaves++;
     }
 
-   }
+    public void SpawnEnemiesWave2()
+    {
+        RandomSpawn = Random.Range(0, SpawnPointsWave2.Length);
+        RandomEnemy = Random.Range(0, Enemies.Count);
+        Instantiate(Enemies[RandomEnemy], SpawnPointsWave2[RandomSpawn].position, Quaternion.identity);
+        EnemiesInWaves++;
+    }
+
+    public void TeleportWave2()
+    {
+        if(Wave1Finished)
+        {
+            Otso.gameObject.transform.position = Spawn2.gameObject.transform.position;
+        }
+    }
+}

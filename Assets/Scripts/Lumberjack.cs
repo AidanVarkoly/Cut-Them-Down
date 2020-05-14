@@ -174,6 +174,11 @@ public class Lumberjack : MonoBehaviour
     public void FindTree()
     {
         Trees = GameObject.FindGameObjectsWithTag("Tree");
+
+        if (manager.Wave1Finished)
+        {
+            Trees = GameObject.FindGameObjectsWithTag("Tree2");
+        }
         index = Random.Range(0, Trees.Length);
         CurrentTree = Trees[index];
     }
@@ -330,8 +335,7 @@ public class Lumberjack : MonoBehaviour
 
     public void Destroy()
     {
-        Destroy(this.gameObject);
-        
+        Destroy(this.gameObject);        
     }
 }
 

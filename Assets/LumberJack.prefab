@@ -4903,7 +4903,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RenderingLayerMask: 2
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
@@ -5422,7 +5422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97b43a0b985d874fab64e64beb6b2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 1
   currentHealth: 0
   AttackDamage: 3
   AttackRate: 2
@@ -5437,6 +5437,7 @@ MonoBehaviour:
   timeDead: 0
   EatTime: 25
   MaxEatTime: 50
+  currentState: 0
   manager: {fileID: 0}
   Blood: {fileID: 2583195}
   move: {fileID: 0}
