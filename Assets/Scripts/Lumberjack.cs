@@ -328,7 +328,11 @@ public class Lumberjack : MonoBehaviour
             if (eaten)
             {
                 EatBar.gameObject.SetActive(false);
-                Otso.GetComponent<PlayerMovement>().Stamina += 8;
+                Otso.GetComponent<PlayerMovement>().Stamina += 6;
+                if(Otso.GetComponent<PlayerMovement>().Stamina > 50)
+                {
+                    Otso.GetComponent<PlayerMovement>().Stamina = 50;
+                }
                 Destroy();
                 eaten = false;
                 beingEaten = false;

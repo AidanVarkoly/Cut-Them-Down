@@ -104,7 +104,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         StaminaBar.value = Stamina;
-        if(Stamina <= 30)
+        if (Stamina <= 50)
+        {
+            StaminaBar.fillRect.GetComponent<Image>().color = Color.green;
+        }
+        if (Stamina <= 30)
         {
             StaminaBar.fillRect.GetComponent<Image>().color = Color.yellow;
         }

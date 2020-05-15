@@ -58,7 +58,7 @@ public class Attack : MonoBehaviour
                 animator.SetBool("IsLightAttacking", true);
                 lightAttack = true;
                 LightAttack();
-                Move.Stamina -= 1;
+                Move.Stamina -= 0.5f;
                 StartCoroutine("EndLightAttack");
                 nextAttackTime = Time.time + 1f / lightAttackRate;
             }
