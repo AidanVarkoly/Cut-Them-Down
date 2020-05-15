@@ -33,8 +33,12 @@ public class GameManager : MonoBehaviour
     [Header("SpawnPoints")]
     public Transform[] SpawnPoints;
     public Transform[] SpawnPointsWave2;
-    int RandomSpawn;
+    public Transform[] SpawnPointsWave3;
+    public Transform[] SpawnPointsWave4;
     public Transform Spawn2;
+    public Transform Spawn3;
+    public Transform Spawn4;
+    int RandomSpawn;
 
     [Header("Waves")]
     public int RandomEnemy;
@@ -51,6 +55,7 @@ public class GameManager : MonoBehaviour
     public int WaveCounter = 0;
     public bool Wave1Finished = false;
     public bool Wave2Finished = false;
+    public bool Wave3Finished = false;
 
     [Header("Text")]
     public Text WaveNumber;
@@ -80,7 +85,19 @@ public class GameManager : MonoBehaviour
         {
             setCurrentState(SpawnStates.Dead);
         }
-        if(TreesDestroyed == 19)
+        if(!Wave1Finished && TreesDestroyed == 19)
+        {
+            setCurrentState(SpawnStates.LumberJacksWin);
+        }
+        if (Wave1Finished && TreesDestroyed == 21)
+        {
+            setCurrentState(SpawnStates.LumberJacksWin);
+        }
+        if (Wave2Finished && TreesDestroyed == 15)
+        {
+            setCurrentState(SpawnStates.LumberJacksWin);
+        }
+        if (Wave3Finished && TreesDestroyed == 11)
         {
             setCurrentState(SpawnStates.LumberJacksWin);
         }
@@ -106,12 +123,22 @@ public class GameManager : MonoBehaviour
                 if (Wave1Finished && GracePeriod <= 0)
                 {
                     setCurrentState(SpawnStates.Wave2);
+                    TreesDestroyed = 0;
                     TeleportWave2();
                     WaveCounter++;
                 }
                 if (Wave2Finished && GracePeriod <= 0)
                 {
                     setCurrentState(SpawnStates.Wave3);
+                    TreesDestroyed = 0;
+                    TeleportWave3();
+                    WaveCounter++;
+                }
+                if (Wave3Finished && GracePeriod <= 0)
+                {
+                    setCurrentState(SpawnStates.Wave4);
+                    TreesDestroyed = 0;
+                    TeleportWave4();
                     WaveCounter++;
                 }
                 break;
@@ -174,15 +201,75 @@ public class GameManager : MonoBehaviour
                 break;
             case SpawnStates.Wave3:
 
-                setCurrentState(SpawnStates.EndGame);
+                SpawnTime -= Time.deltaTime;
+
+                if (Enemies.Count < 30)
+                {
+                    Enemies.Add(hunter);
+                    Enemies.Add(lumberjack);
+                    Enemies.Add(lumberjack);
+                    Enemies.Add(lumberjack);
+                    Enemies.Add(hunter);
+                    MaxEnemiesInWaves = 30;
+                    EnemiesAlive = Enemies.Count;
+                    EnemiesInWaves = 0;
+                }
+
+                if (EnemiesInWaves < MaxEnemiesInWaves)
+                {
+                    if (SpawnTime <= 0)
+                    {
+                        SpawnEnemiesWave3();
+                        SpawnTime = MaxSpawnTime;
+                    }
+
+                }
+
+                if (EnemiesAlive == 0)
+                {
+                    Wave2Finished = true;
+                    GracePeriod = 10;
+                    setCurrentState(SpawnStates.Idle);
+                }
+      
 
                 break;
             case SpawnStates.Wave4:
 
+                SpawnTime -= Time.deltaTime;
+
+                if (Enemies.Count < 35)
+                {
+                    Enemies.Add(hunter);
+                    Enemies.Add(lumberjack);
+                    Enemies.Add(lumberjack);
+                    Enemies.Add(lumberjack);
+                    Enemies.Add(hunter);
+                    MaxEnemiesInWaves = 35;
+                    EnemiesAlive = Enemies.Count;
+                    EnemiesInWaves = 0;
+                }
+
+                if (EnemiesInWaves < MaxEnemiesInWaves)
+                {
+                    if (SpawnTime <= 0)
+                    {
+                        SpawnEnemiesWave4();
+                        SpawnTime = MaxSpawnTime;
+                    }
+
+                }
+
+                if (EnemiesAlive == 0)
+                {
+                    Wave2Finished = true;
+                    GracePeriod = 10;
+                    setCurrentState(SpawnStates.EndGame);
+                }
                 break;
             case SpawnStates.EndGame:
                 EndGame.gameObject.SetActive(true);
-                StartCoroutine("RestartLevel");
+                StartCoroutine("LoadMenu");
 
                 break;
             case SpawnStates.Dead:
@@ -202,6 +289,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level 1");
      }
 
+    public IEnumerator LoadMenu()
+    {
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadScene("Menu");
+    }
 
     public void SpawnEnemies()
     {
@@ -218,12 +310,40 @@ public class GameManager : MonoBehaviour
         Instantiate(Enemies[RandomEnemy], SpawnPointsWave2[RandomSpawn].position, Quaternion.identity);
         EnemiesInWaves++;
     }
+    public void SpawnEnemiesWave3()
+    {
+        RandomSpawn = Random.Range(0, SpawnPointsWave3.Length);
+        RandomEnemy = Random.Range(0, Enemies.Count);
+        Instantiate(Enemies[RandomEnemy], SpawnPointsWave3[RandomSpawn].position, Quaternion.identity);
+        EnemiesInWaves++;
+    }
+    public void SpawnEnemiesWave4()
+    {
+        RandomSpawn = Random.Range(0, SpawnPointsWave4.Length);
+        RandomEnemy = Random.Range(0, Enemies.Count);
+        Instantiate(Enemies[RandomEnemy], SpawnPointsWave4[RandomSpawn].position, Quaternion.identity);
+        EnemiesInWaves++;
+    }
 
     public void TeleportWave2()
     {
         if(Wave1Finished)
         {
             Otso.gameObject.transform.position = Spawn2.gameObject.transform.position;
+        }
+    }
+    public void TeleportWave3()
+    {
+        if (Wave2Finished)
+        {
+            Otso.gameObject.transform.position = Spawn3.gameObject.transform.position;
+        }
+    }
+    public void TeleportWave4()
+    {
+        if (Wave3Finished)
+        {
+            Otso.gameObject.transform.position = Spawn4.gameObject.transform.position;
         }
     }
 }

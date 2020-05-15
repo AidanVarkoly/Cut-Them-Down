@@ -11,6 +11,8 @@ TagManager:
   - Arrow
   - Wave2Spawns
   - Tree2
+  - Tree3
+  - Tree4
   layers:
   - Default
   - TransparentFX
@@ -26,7 +28,7 @@ TagManager:
   - Hunter
   - Lumberjack
   - Minimap
-  - 
+  - Border
   - 
   - 
   - 

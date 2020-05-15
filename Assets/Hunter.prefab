@@ -47,7 +47,6 @@ GameObject:
   - component: {fileID: -481913050949903361}
   - component: {fileID: 5494119120283543599}
   - component: {fileID: 1495486428223011555}
-  - component: {fileID: 7018237377775254378}
   m_Layer: 11
   m_Name: Hunter
   m_TagString: Enemy
@@ -504,28 +503,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &7018237377775254378
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6683212904279298968}
-  m_Enabled: 1
-  m_AgentTypeID: -334000983
-  m_Radius: 0.6363636
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.6969697
-  m_BaseOffset: 0.8484849
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &6765708677887901253
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +529,7 @@ Transform:
   m_GameObject: {fileID: 6765708677887901253}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.054, y: -0.167, z: 0.4}
-  m_LocalScale: {x: 2.084188, y: 2.0564, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 5817760878660728547}
   m_RootOrder: 0

@@ -108,8 +108,6 @@ public class Lumberjack : MonoBehaviour
                 Die();
                 break;
         }
-
-        //CheckRaycast();
     }
 
     void Update()
@@ -160,24 +158,35 @@ public class Lumberjack : MonoBehaviour
         }
     }
 
-        public IEnumerator Attack()
-    {
-        if (attackOtsoSource.isPlaying == false)
-        {
-            animator.SetTrigger("IsChopping");
-            attackOtsoSource.Play();
-            Otso.GetComponent<PlayerMovement>().TakeDamage(AttackDamage);
-        }
-        yield return new WaitForSeconds(AttackRate);
-    }
-
     public void FindTree()
     {
-        Trees = GameObject.FindGameObjectsWithTag("Tree");
-
+        if (manager.Wave1Finished == false)
+        {
+            Trees = GameObject.FindGameObjectsWithTag("Tree");
+        }
         if (manager.Wave1Finished)
         {
+            for(int i = 0; i < Trees.Length; i++)
+            {
+                Trees[i] = null;
+            }
             Trees = GameObject.FindGameObjectsWithTag("Tree2");
+        }
+        if (manager.Wave2Finished)
+        {
+            for (int i = 0; i < Trees.Length; i++)
+            {
+                Trees[i] = null;
+            }
+            Trees = GameObject.FindGameObjectsWithTag("Tree3");
+        }
+        if (manager.Wave3Finished)
+        {
+            for (int i = 0; i < Trees.Length; i++)
+            {
+                Trees[i] = null;
+            }
+            Trees = GameObject.FindGameObjectsWithTag("Tree4");
         }
         index = Random.Range(0, Trees.Length);
         CurrentTree = Trees[index];
@@ -252,9 +261,15 @@ public class Lumberjack : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, Otso.transform.position, Speed * 2 * Time.deltaTime);
             animator.SetTrigger("IsMoving");
         }
-        else
+        if (Dist2 < 1.5)
         {
-            StartCoroutine("Attack");
+            if (Time.time >= NextAttackTime)
+            {
+                NextAttackTime = Time.time + AttackRate;
+                animator.SetTrigger("IsChopping");
+                attackOtsoSource.Play();
+                Otso.GetComponent<PlayerMovement>().TakeDamage(AttackDamage);
+            }
         }
     }
 
@@ -300,7 +315,7 @@ public class Lumberjack : MonoBehaviour
             EatBar.gameObject.SetActive(true);
             EatTime -= Time.deltaTime * 5;
 
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKey(KeyCode.F))
             {
                 EatTime += 4;
                 Otso.GetComponent<Animator>().Play("Eating");

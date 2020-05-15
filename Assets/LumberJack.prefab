@@ -4883,7 +4883,7 @@ Transform:
   m_GameObject: {fileID: 2181334500794778031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.03, y: 0.06, z: 0}
-  m_LocalScale: {x: 1.2915, y: 1.506, z: 0.5}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 7301712535475935883}
   m_RootOrder: 2
@@ -5333,7 +5333,6 @@ GameObject:
   - component: {fileID: 1156983251171822422}
   - component: {fileID: 6282967852264194205}
   - component: {fileID: 6555757409602387832}
-  - component: {fileID: 4089339978210826568}
   m_Layer: 12
   m_Name: LumberJack
   m_TagString: Enemy
@@ -5422,9 +5421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97b43a0b985d874fab64e64beb6b2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 10
   currentHealth: 0
-  AttackDamage: 3
+  AttackDamage: 2
   AttackRate: 2
   NextAttackTime: 2
   Trees: []
@@ -6285,28 +6284,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &4089339978210826568
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7301712535475936118}
-  m_Enabled: 1
-  m_AgentTypeID: -334000983
-  m_Radius: 0.2375
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.1
-  m_BaseOffset: 0.55
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8128491448009996504
 GameObject:
   m_ObjectHideFlags: 0
